@@ -56,6 +56,24 @@ h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(26px,3.4
 .dates{margin-top:16px;background:var(--amber-soft);border:1px solid #f1d3a6;border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15.5px}
 .dates b{color:var(--amber)}
 
+
+/* ---------- entregable ---------- */
+.deliver{margin-top:22px;background:#fff;border:2px solid var(--navy);border-radius:16px;overflow:hidden}
+.deliver .dh{background:var(--navy);color:#fff;padding:14px 20px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.deliver .dh h3{font-family:'DM Serif Display',serif;font-weight:400;font-size:26px}
+.deliver .dh span{color:var(--sky);font-size:15.5px}
+.deliver .dh b{color:#fff}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.dcol{padding:16px 20px;border-right:1px solid var(--line)}
+.dcol:last-child{border-right:0}
+@media(max-width:620px){.dcol{border-right:0;border-bottom:1px solid var(--line)}}
+.dcol h4{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:8px;font-weight:800}
+.dcol ul{list-style:none}
+.dcol li{position:relative;padding:5px 0 5px 30px;font-size:15.5px;color:var(--text2)}
+.dcol li::before{content:'';position:absolute;left:0;top:7px;width:18px;height:18px;border:2px solid var(--c);border-radius:5px}
+.dnote{padding:12px 20px;background:var(--amber-soft);border-top:1px solid #f1d3a6;font-size:15px;color:var(--text2)}
+.dnote b{color:var(--amber)}
+
 /* ---------- tarjetas índice ---------- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;position:relative}
@@ -172,6 +190,26 @@ footer b{color:#fff}
       <div class="how" style="--c:var(--purple)"><div class="n">Paso 4</div><h3>Entrega y sustenta</h3><p>Entrega las 7 cartulinas. En clase harás <b>una construcción sorteada</b> con medidas nuevas o explicarás una de tus respuestas. ¡Por eso es importante que las hagas tú!</p></div>
     </div>
     <div class="dates" id="dates"></div>
+    <div class="deliver" id="entregable">
+      <div class="dh"><h3>📦 Lo que debes entregar</h3><span>El <b>miércoles 14 de octubre</b>, en tu clase de Geometría</span></div>
+      <div class="dgrid">
+        <div class="dcol" style="--c:var(--blue)"><h4>Las cartulinas</h4><ul>
+          <li><b>7 cartulinas de 1/8</b>, una por construcción</li>
+          <li>En <b>orden del 1 al 7</b></li>
+          <li>Unidas con gancho o dentro de un <b>sobre con tu nombre</b></li></ul></div>
+        <div class="dcol" style="--c:var(--teal)"><h4>En el frente de cada una</h4><ul>
+          <li>Nombre, grupo, <b>número y nombre</b> de la construcción<br><small>Ej.: «3 · Triángulo LLL»</small></li>
+          <li>La construcción con <b>arcos y marcas visibles</b> (no los borres)</li>
+          <li>Todos los <b>rótulos</b>: vértices (A, B, C), puntos (P, Q, H, G…), rectas (r, s, t…) y símbolos (∥, ⊥)</li></ul></div>
+        <div class="dcol" style="--c:var(--amber)"><h4>En el reverso de cada una</h4><ul>
+          <li>La tabla del <b>registro de verificación</b> con <b>tus</b> medidas</li>
+          <li>Tu respuesta a <b>Para pensar</b>, explicando por qué</li></ul></div>
+        <div class="dcol" style="--c:var(--purple)"><h4>A los ocho días: sustentación</h4><ul>
+          <li>Trae <b>regla, compás, escuadra y transportador</b></li>
+          <li>Harás una construcción con <b>medidas nuevas</b> en unos 10 minutos, o explicarás una de tus respuestas</li></ul></div>
+      </div>
+      <div class="dnote">⚠️ <b>Si entregas incompleto:</b> tu nota de cartulinas es el <b>promedio de las 7</b>. Cada cartulina que falte baja tu promedio, así que entrega todas, aunque alguna no te quede perfecta.</div>
+    </div>
   </div>
 </section>
 
