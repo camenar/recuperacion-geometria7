@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recuperación Geometría 7° · Construcciones geométricas</title>
+<meta name="description" content="Plan de recuperación de Geometría 7° — Período 3. I.E. Merceditas Gómez Martínez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;0,800;1,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2040;--blue:#1C3A6E;--sky:#A8C4E8;--teal:#1A6B5A;--teal-soft:#E0F2F1;
+  --amber:#C47C1A;--amber-soft:#FFF3E0;--red:#B83232;--purple:#6C3483;--purple-soft:#F3E5F5;
+  --cream:#F7F6F2;--warm:#EDECEA;--line:#DEDBD3;--text:#1C1C1E;--text2:#3A3A3C;--text3:#6B6B6E;--card:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;background:var(--cream);color:var(--text);line-height:1.55;font-size:17px}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- cabecera ---------- */
+header.hero{background:var(--navy);color:#fff;padding:28px 0 34px;position:relative;overflow:hidden}
+header.hero::after{content:'';position:absolute;right:-80px;top:-60px;width:360px;height:360px;border:2px dashed rgba(168,196,232,.25);border-radius:50%}
+.crumb{color:var(--sky);font-size:14px;font-weight:500;letter-spacing:.02em}
+.crumb b{color:#fff}
+h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(32px,5vw,52px);line-height:1.05;margin:12px 0 10px}
+.lead{color:#dfe8f5;max-width:720px;font-size:18px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(168,196,232,.35);color:#fff;border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.chip.amber{background:var(--amber);border-color:var(--amber)}
+
+/* ---------- progreso ---------- */
+.progress{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.progress .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}
+.pbar{flex:1;height:10px;background:var(--warm);border-radius:6px;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--amber));transition:width .4s}
+.ptext{font-size:14px;font-weight:700;color:var(--navy);white-space:nowrap}
+.pnav{display:flex;gap:6px}
+.pnav a{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;text-decoration:none;background:var(--warm);color:var(--text2);border:2px solid transparent}
+.pnav a.done{background:var(--teal);color:#fff}
+@media(max-width:640px){.pnav{display:none}}
+
+section{padding:40px 0;scroll-margin-top:56px}
+h2{font-family:'DM Serif Display',serif;font-weight:400;font-size:clamp(26px,3.4vw,36px);color:var(--navy);line-height:1.1;margin-bottom:8px}
+.sub{color:var(--text2);margin-bottom:22px;max-width:760px}
+
+/* ---------- instrucciones ---------- */
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.how{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;border-top:5px solid var(--c,var(--blue))}
+.how .n{font-size:13px;font-weight:800;color:var(--c,var(--blue));letter-spacing:.08em;text-transform:uppercase}
+.how h3{font-size:19px;color:var(--navy);margin:4px 0 6px}
+.how p,.how li{font-size:15.5px;color:var(--text2)}
+.how ul{padding-left:18px}
+.dates{margin-top:16px;background:var(--amber-soft);border:1px solid #f1d3a6;border-radius:12px;padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:15.5px}
+.dates b{color:var(--amber)}
+
+/* ---------- tarjetas índice ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;position:relative}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(15,32,64,.12)}
+.card .thumb{aspect-ratio:16/9;background:var(--warm) center/cover no-repeat;position:relative}
+.card .thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,32,64,0) 55%,rgba(15,32,64,.55))}
+.card .num{position:absolute;left:12px;top:12px;width:40px;height:40px;border-radius:50%;background:var(--c);color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.card .dur{position:absolute;right:10px;bottom:10px;z-index:2;color:#fff;font-size:13px;font-weight:700;background:rgba(0,0,0,.45);padding:2px 8px;border-radius:6px}
+.card .ok{position:absolute;right:10px;top:10px;z-index:2;background:var(--teal);color:#fff;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;display:none}
+.card.done .ok{display:block}
+.card .body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card h3{font-size:19px;color:var(--navy);line-height:1.2}
+.card .tools{font-size:14px;color:var(--text3)}
+.block{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+
+/* ---------- construcción ---------- */
+.cons{border-top:1px solid var(--line)}
+.cons:nth-of-type(even){background:#fff}
+.chead{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.cbadge{width:58px;height:58px;border-radius:16px;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;flex-shrink:0}
+.chead h2{margin:0}
+.chead .tools{color:var(--text2);font-size:15.5px}
+.clay{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:22px;align-items:start}
+@media(max-width:900px){.clay{grid-template-columns:1fr}}
+.clay>div{min-width:0}
+@media(max-width:520px){table.reg{font-size:13.5px}table.reg td.exp{white-space:normal}.dato .v{font-size:20px}.btn{font-size:14px;padding:8px 12px}}
+  .yt{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(15,32,64,.18);background:#000}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+video{width:100%;border-radius:14px;background:#000;display:block;box-shadow:0 8px 24px rgba(15,32,64,.18)}
+.vlinks{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--blue);color:var(--blue);background:#fff;cursor:pointer;font-family:inherit}
+.btn.solid{background:var(--blue);color:#fff}
+.btn small{font-weight:500;opacity:.8}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.cons:nth-of-type(even) .panel{background:var(--cream)}
+.panel h4{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:10px;font-weight:800}
+.datos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.dato{background:var(--warm);border-radius:10px;padding:8px 4px}
+.cons:nth-of-type(even) .dato{background:#fff}
+.dato .k{font-size:13px;font-weight:700;color:var(--text3)}
+.dato .v{font-size:24px;font-weight:800;color:var(--navy);line-height:1.15}
+.dato .v small{font-size:14px;color:var(--text2);font-weight:600}
+ol.steps{padding-left:22px;font-size:15.5px;color:var(--text2)}
+ol.steps li{margin-bottom:4px}
+.check label{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;padding:6px 0;cursor:pointer;color:var(--text2)}
+.check input{width:20px;height:20px;accent-color:var(--teal);flex-shrink:0;margin-top:2px}
+table.reg{width:100%;border-collapse:collapse;font-size:15px}
+table.reg th,table.reg td{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left}
+table.reg th{font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3)}
+table.reg td.exp{color:var(--teal);font-weight:700;white-space:nowrap}
+table.reg td.blank{color:var(--text3)}
+.think{background:var(--purple-soft);border:1px solid #e2c7ec;border-radius:14px;padding:16px 18px}
+.think h4{color:var(--purple);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.think p{font-size:17px;color:var(--text);font-style:italic}
+.think small{display:block;color:var(--text2);margin-top:6px;font-style:normal;font-size:14px}
+.markdone{margin-top:14px;display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy);cursor:pointer}
+.markdone input{width:22px;height:22px;accent-color:var(--teal)}
+
+/* ---------- rúbrica / valoración ---------- */
+.tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);font-size:15px}
+.tbl th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:14px}
+.tbl td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;color:var(--text2)}
+.tbl td:first-child{font-weight:700;color:var(--navy)}
+.tbl tr:nth-child(even) td{background:#FBFAF7}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.weights{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:24px}
+.w{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;border-left:6px solid var(--c)}
+.w .p{font-size:36px;font-weight:800;color:var(--c);line-height:1}
+.w h3{font-size:17px;color:var(--navy);margin:6px 0 4px}
+.w p{font-size:15px;color:var(--text2)}
+footer{background:var(--navy);color:var(--sky);padding:26px 0;font-size:14px;margin-top:20px}
+footer b{color:#fff}
+@media print{
+  header.hero,.progress,video,.vlinks,.markdone,.grid,footer{display:none!important}
+  body{background:#fff;font-size:12pt}
+  section{padding:10px 0;page-break-inside:avoid}
+  .cons{page-break-before:always}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="crumb">I.E. Merceditas Gómez Martínez · <b>Geometría 7°</b> · Período 3</div>
+    <h1>Plan de recuperación:<br>construcciones geométricas</h1>
+    <p class="lead">Siete videos te muestran, paso a paso, cómo hacer cada construcción con tus instrumentos. Tú la haces en casa, en tu cartulina, verificas tus medidas y la presentas en clase.</p>
+    <div class="meta">
+      <span class="chip">🎬 7 videos con voz</span>
+      <span class="chip">📄 7 cartulinas de 1/8</span>
+      <span class="chip">📏 Regla · compás · escuadra · transportador</span>
+      <span class="chip amber" id="chipFecha">📅 Entrega: por definir</span>
+    </div>
+  </div>
+</header>
+
+<div class="progress" aria-label="Tu progreso">
+  <div class="wrap">
+    <span class="ptext" id="ptext">0 de 7 listas</span>
+    <div class="pbar"><i id="pbar"></i></div>
+    <nav class="pnav" id="pnav"></nav>
+  </div>
+</div>
+
+<!-- ============ CÓMO TRABAJAR ============ -->
+<section id="como">
+  <div class="wrap">
+    <h2>¿Cómo trabajar?</h2>
+    <p class="sub">Haz las construcciones <b>en el orden en que aparecen</b>: cada una usa lo que aprendiste en la anterior.</p>
+    <div class="howto">
+      <div class="how" style="--c:var(--blue)"><div class="n">Paso 1</div><h3>Mira el video completo</h3><p>Primero solo obsérvalo. Luego vuelve a verlo y <b>pausa en cada paso</b> mientras construyes. Si tienes pocos datos, usa la versión <b>paso a paso interactiva</b>, que pesa muchísimo menos.</p></div>
+      <div class="how" style="--c:var(--teal)"><div class="n">Paso 2</div><h3>Construye en tu cartulina</h3><ul><li>Una cartulina de <b>1/8</b> por construcción, en horizontal.</li><li>Nombre, grupo y número de construcción arriba.</li><li>Lápiz bien afilado. <b>No borres</b> los arcos ni las marcas.</li></ul></div>
+      <div class="how" style="--c:var(--amber)"><div class="n">Paso 3</div><h3>Verifica y registra</h3><p>Mide con tu regla y transportador lo que pide el <b>registro de verificación</b> y escríbelo en el <b>reverso</b> de la cartulina, junto con tu respuesta a la pregunta <b>Para pensar</b>.</p></div>
+      <div class="how" style="--c:var(--purple)"><div class="n">Paso 4</div><h3>Entrega y sustenta</h3><p>Entrega las 7 cartulinas. En clase harás <b>una construcción sorteada</b> con medidas nuevas o explicarás una de tus respuestas. ¡Por eso es importante que las hagas tú!</p></div>
+    </div>
+    <div class="dates" id="dates"></div>
+  </div>
+</section>
+
+<!-- ============ ÍNDICE ============ -->
+<section id="indice" style="padding-top:0">
+  <div class="wrap">
+    <h2>Las 7 construcciones</h2>
+    <p class="sub">Toca una tarjeta para ir a su video y su ficha.</p>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<main id="lista"></main>
+
+<!-- ============ VALORACIÓN ============ -->
+<section id="valoracion" class="cons" style="--c:var(--navy)">
+  <div class="wrap">
+    <h2>¿Cómo se valora tu recuperación?</h2>
+    <p class="sub">Tu nota final combina tres partes.</p>
+    <div class="weights">
+      <div class="w" style="--c:var(--teal)"><div class="p">50 %</div><h3>Las 7 cartulinas</h3><p>Precisión de las medidas, evidencia de construcción y presentación.</p></div>
+      <div class="w" style="--c:var(--amber)"><div class="p">20 %</div><h3>Registro y preguntas</h3><p>Las medidas que verificaste y tus respuestas a <i>Para pensar</i>, en el reverso.</p></div>
+      <div class="w" style="--c:var(--purple)"><div class="p">30 %</div><h3>Sustentación en clase</h3><p>Una construcción sorteada con medidas nuevas (10 min) o explicar una de tus respuestas.</p></div>
+    </div>
+    <h3 style="font-size:20px;color:var(--navy);margin-bottom:10px">Rúbrica de cada cartulina</h3>
+    <div class="scroll">
+    <table class="tbl">
+      <thead><tr><th>Criterio</th><th>Superior</th><th>Alto</th><th>Básico</th><th>Bajo</th></tr></thead>
+      <tbody>
+        <tr><td>Precisión de las medidas</td><td>Todas las medidas coinciden (±2 mm, ±2°)</td><td>Una medida se aleja un poco</td><td>Varias medidas se alejan, pero la figura es correcta</td><td>La figura no corresponde a los datos</td></tr>
+        <tr><td>Evidencia de construcción</td><td>Arcos, marcas, rayos y ángulos rectos visibles y limpios</td><td>Casi todas las marcas visibles</td><td>Pocas marcas: parece hecha solo con regla</td><td>Sin marcas: no se ve cómo se construyó</td></tr>
+        <tr><td>Rotulación y presentación</td><td>Vértices, puntos, rectas y símbolos rotulados; trazo limpio</td><td>Falta un rótulo</td><td>Faltan varios rótulos o el trazo es desordenado</td><td>Sin rótulos, difícil de leer</td></tr>
+        <tr><td>Registro y <i>Para pensar</i></td><td>Registro completo y respuesta argumentada</td><td>Registro completo, respuesta corta</td><td>Registro incompleto</td><td>Sin registro ni respuesta</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>I.E. Merceditas Gómez Martínez</b> · Medellín · Geometría 7° — Período 3<br>
+    Docente: <b>Carlos Alberto Mena Romaña</b> · Plan de recuperación: construcciones geométricas
+  </div>
+</footer>
+
+<script>
+/* ===== CONFIGURACIÓN DEL DOCENTE: edita aquí fechas y avisos ===== */
+const CONFIG={
+  entrega:'miércoles 14 de octubre',
+  sustentacion:'a los ocho días de la entrega, en tu clase de Geometría (semana del 21 de octubre)',
+  aviso:'Si no tienes algún instrumento, avísale a tu docente con anticipación.',
+  /* Códigos de YouTube: pega aquí lo que va después de "v=" o de "youtu.be/"
+     Ej.: https://youtu.be/AbC123xYz → 'AbC123xYz'. Si un código queda vacío, se usa el MP4 de la carpeta videos/. */
+  youtube:{PAR:'vCI4a2ezyN8', PER:'k0z9kGyDLyM', LLL:'3pOVhDedyik', LAL:'gHGUmmqGa-w', ALA:'8ZqforUXUKE', ORT:'jaBHQeC2-q0', BAR:'1kNzs1Jln10'},
+  /* true si subes también la carpeta videos/ (permite descargar el MP4). false si solo usas YouTube. */
+  mp4Local:false
+};
+
+/* ===== LAS 7 CONSTRUCCIONES (orden de aprendizaje) ===== */
+const C=[
+ {id:'PAR',file:'Construccion_01_PAR',t:'Rectas paralelas',c:'#1C3A6E',block:'Base',dur:'2:36',
+  tools:'Regla + escuadra',
+  datos:[['Recta r','16','cm'],['Separación','4','cm'],['Rectas','3','']],
+  steps:['Traza una recta r de 16 cm en la parte baja de la cartulina.','Apoya un lado de la escuadra sobre r y pega la regla al otro lado, con el 0 sobre r.','Sin mover la regla, desliza la escuadra hasta el 4 y traza la recta s.','Sigue hasta el 8 y traza la recta t.','Escribe r ∥ s ∥ t.'],
+  check:['Las tres rectas están rotuladas r, s y t','Escribí el símbolo r ∥ s ∥ t','Medí la distancia en dos lugares distintos'],
+  reg:[['Distancia r–s (izquierda)','4 cm'],['Distancia r–s (derecha)','4 cm'],['Distancia s–t (izquierda)','4 cm'],['Distancia s–t (derecha)','4 cm']],
+  think:'¿Qué crees que pasaría con tus rectas si la regla se moviera mientras deslizabas la escuadra?'},
+ {id:'PER',file:'Construccion_02_PER',t:'Rectas perpendiculares',c:'#1C3A6E',block:'Base',dur:'2:43',
+  tools:'Regla + escuadra',
+  datos:[['Recta r','20','cm'],['P sobre r','5','cm'],['Q fuera','≈7','cm']],
+  steps:['Traza una recta r de 20 cm y marca P a 5 cm del extremo izquierdo.','Apoya la escuadra sobre r, lleva el ángulo recto hasta P y traza la recta p.','Marca un punto Q unos 7 cm por encima de r.','Desliza la escuadra sobre r hasta que su otro lado toque Q y traza la recta q.','Marca los ángulos rectos con un cuadradito.'],
+  check:['Marqué los dos ángulos rectos','Escribí p ⊥ r y q ⊥ r','Medí la distancia de Q a r por la perpendicular'],
+  reg:[['Ángulo entre p y r (transportador)','90°'],['Distancia de Q a r','≈ 7 cm'],['Distancia entre p y q (arriba y abajo)','Igual en ambas']],
+  think:'¿Por qué crees que la distancia de un punto a una recta se mide siempre por la perpendicular?'},
+ {id:'LLL',file:'Construccion_03_LLL',t:'Triángulo LLL',c:'#1A6B5A',block:'Triángulos',dur:'2:35',
+  tools:'Regla + compás',
+  datos:[['AB','14','cm'],['AC','10','cm'],['BC','8','cm']],
+  steps:['Traza la base AB de 14 cm.','Abre el compás a 10 cm y traza un arco desde A.','Cierra el compás a 8 cm y traza un arco desde B.','El cruce de los arcos es C. Une C con A y con B.'],
+  check:['Los dos arcos se ven y se cruzan en C','Los tres vértices están rotulados','Medí los tres lados y el ángulo C'],
+  reg:[['Lado AC','10 cm'],['Lado BC','8 cm'],['Ángulo C','≈ 102°'],['Tipo de triángulo','Obtusángulo']],
+  think:'Si hubieras empezado por el lado de 8 cm, ¿te habría salido el mismo triángulo? ¿Por qué?'},
+ {id:'LAL',file:'Construccion_04_LAL',t:'Triángulo LAL',c:'#1A6B5A',block:'Triángulos',dur:'3:37',
+  tools:'Regla + transportador + compás',
+  datos:[['AB','14','cm'],['∠A','60','°'],['AC','10','cm']],
+  steps:['Traza la base AB de 14 cm.','Con el transportador en A, marca 60° (escala que empieza en 0 sobre AB).','Traza el rayo desde A por la marca.','Con el compás a 10 cm, corta el rayo desde A: ese punto es C.','Une C con B.'],
+  check:['Se ven la marca de 60°, el rayo y el arco','El ángulo A está marcado','Medí BC y los ángulos B y C'],
+  reg:[['Lado BC','≈ 12,5 cm'],['Ángulo B','≈ 44°'],['Ángulo C','≈ 76°'],['Suma de los tres ángulos','180°']],
+  think:'Si el ángulo de 60° no estuviera entre los dos lados dados, ¿saldría siempre el mismo triángulo?'},
+ {id:'ALA',file:'Construccion_05_ALA',t:'Triángulo ALA',c:'#1A6B5A',block:'Triángulos',dur:'3:26',
+  tools:'Regla + transportador',
+  datos:[['∠A','45','°'],['AB','15','cm'],['∠B','70','°']],
+  steps:['Traza la base AB de 15 cm, un poco más abajo de lo normal.','Marca 45° en A y traza un rayo largo.','En B usa la escala cuyo 0 mira hacia A y marca 70°.','Traza el rayo desde B hasta que corte el primero: ese punto es C.','Repasa AC y BC solo hasta C.'],
+  check:['Se ven las dos marcas y los dos rayos','Usé la escala correcta en B','Medí el ángulo C y los lados AC y BC'],
+  reg:[['Ángulo C','65°'],['Lado AC','≈ 15,6 cm'],['Lado BC','≈ 11,7 cm'],['Altura desde C hasta AB','11 cm']],
+  think:'Si solo te dieran los tres ángulos, sin ningún lado, ¿podrías construir un único triángulo?'},
+ {id:'ORT',file:'Construccion_06_ORT',t:'Ortocentro',c:'#C47C1A',block:'Líneas notables',dur:'3:09',
+  tools:'Regla + compás + escuadra',
+  datos:[['AB','11','cm'],['AC','10','cm'],['BC','9','cm']],
+  steps:['Construye el triángulo LLL: base 11 cm, arcos de 10 cm desde A y 9 cm desde B.','Con la escuadra apoyada en AB, traza la altura desde C.','Con la escuadra apoyada en BC, traza la altura desde A.','Marca H donde se cortan las alturas.','Comprueba con la altura desde B: debe pasar por H.'],
+  check:['Las tres alturas tienen su ángulo recto marcado','Cada altura tiene un color distinto','El punto H está rotulado'],
+  reg:[['¿La tercera altura pasa por H?','Sí'],['Distancia de H a la base AB','≈ 3,8 cm'],['¿H está dentro o fuera?','Dentro']],
+  think:'Si el triángulo tuviera un ángulo obtuso, ¿dónde crees que quedaría el ortocentro?'},
+ {id:'BAR',file:'Construccion_07_BAR',t:'Baricentro',c:'#C47C1A',block:'Líneas notables',dur:'3:53',
+  tools:'Regla + compás',
+  datos:[['AB','12','cm'],['AC','10','cm'],['BC','8','cm']],
+  steps:['Construye el triángulo LLL: base 12 cm, arcos de 10 cm desde A y 8 cm desde B.','Punto medio de BC con compás a 6 cm (mediatriz): Ma.','Une A con Ma.','Punto medio de AC con compás a 7 cm: Mb. Une B con Mb.','Marca G. Comprueba con Mc (en el 6 de AB) y la mediana desde C.'],
+  check:['Se ven los arcos de las dos mediatrices','Los puntos medios Ma, Mb y Mc están rotulados','Las tres medianas pasan por G'],
+  reg:[['Distancia de C a G','≈ 4,5 cm'],['Distancia de G a Mc','≈ 2,3 cm'],['¿CG es el doble de GMc?','Sí (2 : 1)']],
+  think:'Si recortas tu triángulo en cartón y lo apoyas sobre la punta de un lápiz, ¿en qué punto crees que se quedaría en equilibrio?'}
+];
+
+/* ===== reproductor: YouTube (privacidad mejorada) o MP4 local ===== */
+function player(c){
+  const id=(CONFIG.youtube[c.id]||'').trim();
+  if(id) return `<div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&cc_load_policy=1&cc_lang_pref=es&hl=es" title="${c.t}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+  return `<video controls preload="none" playsinline poster="posters/${c.file}.jpg"><source src="videos/${c.file}.mp4" type="video/mp4">Tu navegador no puede reproducir el video.</video>`;
+}
+/* ===== progreso (se guarda solo en este dispositivo) ===== */
+const KEY='geo7-recuperacion-v1';
+let state={};
+try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+
+/* ===== construir la página ===== */
+const grid=document.getElementById('grid'), lista=document.getElementById('lista'), pnav=document.getElementById('pnav');
+C.forEach((c,i)=>{
+  const n=i+1;
+  grid.insertAdjacentHTML('beforeend',`
+    <a class="card" href="#c${n}" id="card${n}" style="--c:${c.c}">
+      <div class="thumb" style="background-image:url('posters/${c.file}.jpg')"><span class="num">${n}</span><span class="dur">▶ ${c.dur}</span><span class="ok">✓ Lista</span></div>
+      <div class="body"><span class="block">${c.block}</span><h3>${c.t}</h3><span class="tools">${c.tools}</span></div>
+    </a>`);
+  pnav.insertAdjacentHTML('beforeend',`<a href="#c${n}" id="nav${n}" title="${c.t}">${n}</a>`);
+  const datos=c.datos.map(([k,v,u])=>`<div class="dato"><div class="k">${k}</div><div class="v">${v} <small>${u}</small></div></div>`).join('');
+  const steps=c.steps.map(s=>`<li>${s}</li>`).join('');
+  const check=c.check.map((s,j)=>`<label><input type="checkbox" data-k="${c.id}-${j}"> ${s}</label>`).join('');
+  const reg=c.reg.map(([q,e])=>`<tr><td>${q}</td><td class="blank">______</td><td class="exp">${e}</td></tr>`).join('');
+  lista.insertAdjacentHTML('beforeend',`
+  <section class="cons" id="c${n}" style="--c:${c.c}">
+    <div class="wrap">
+      <div class="chead"><div class="cbadge">${n}</div><div><h2>${c.t}</h2><div class="tools">${c.tools} · ${c.dur} min</div></div></div>
+      <div class="clay">
+        <div>
+          ${player(c)}
+          <div class="vlinks">
+            <a class="btn solid" href="laminas/${c.file}.html" target="_blank" rel="noopener">▶ Paso a paso interactivo <small>(pocos datos)</small></a>
+            ${CONFIG.mp4Local?`<a class="btn" href="videos/${c.file}.mp4" download>⬇ Descargar video</a>`:''}
+            ${CONFIG.youtube[c.id]?`<a class="btn" href="https://youtu.be/${CONFIG.youtube[c.id]}" target="_blank" rel="noopener">↗ Abrir en YouTube</a>`:''}
+          </div>
+          <div class="panel" style="margin-top:16px"><h4>Pasos clave</h4><ol class="steps">${steps}</ol></div>
+        </div>
+        <div>
+          <div class="panel"><h4>Ficha de datos</h4><div class="datos">${datos}</div></div>
+          <div class="panel"><h4>Registro de verificación</h4>
+            <p style="font-size:14px;color:var(--text3);margin-bottom:6px">Copia esta tabla en el reverso de tu cartulina con <b>tus</b> medidas.</p>
+            <table class="reg"><thead><tr><th>Mide</th><th>Tu medida</th><th>Debe darte</th></tr></thead><tbody>${reg}</tbody></table></div>
+          <div class="panel check"><h4>Antes de entregar</h4>${check}</div>
+          <div class="think"><h4>💭 Para pensar</h4><p>${c.think}</p><small>Responde en el reverso de la cartulina. Explica tu razón, no solo sí o no.</small></div>
+          <label class="markdone"><input type="checkbox" data-done="${n}"> Mi cartulina ${n} está lista</label>
+        </div>
+      </div>
+    </div>
+  </section>`);
+});
+
+/* ===== fechas ===== */
+document.getElementById('chipFecha').textContent='📅 Entrega: '+CONFIG.entrega;
+document.getElementById('dates').innerHTML=`<span>📅 <b>Entrega de cartulinas:</b> ${CONFIG.entrega}</span><span>🎤 <b>Sustentación:</b> ${CONFIG.sustentacion}</span><span>ℹ️ ${CONFIG.aviso}</span>`;
+
+/* ===== casillas y progreso ===== */
+function refresh(){
+  let k=0; C.forEach((c,i)=>{const n=i+1,d=!!state['done'+n]; if(d)k++;
+    document.getElementById('card'+n).classList.toggle('done',d); document.getElementById('nav'+n).classList.toggle('done',d);});
+  document.getElementById('ptext').textContent=`${k} de 7 listas`;
+  document.getElementById('pbar').style.width=(k/7*100)+'%';
+}
+document.querySelectorAll('input[data-k]').forEach(inp=>{inp.checked=!!state[inp.dataset.k];inp.addEventListener('change',()=>{state[inp.dataset.k]=inp.checked;save();});});
+document.querySelectorAll('input[data-done]').forEach(inp=>{inp.checked=!!state['done'+inp.dataset.done];inp.addEventListener('change',()=>{state['done'+inp.dataset.done]=inp.checked;save();refresh();});});
+refresh();
+
+/* un solo video a la vez */
+document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('video').forEach(o=>{if(o!==v)o.pause();})));
+</script>
+</body>
+</html>
